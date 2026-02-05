@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подвальные помещения</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f2f5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.category-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.category-title {
+    flex: 1;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+/* ===== CATEGORY NAV ===== */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.category-link {
+    padding: 10px 20px;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 2px solid #ddd;
+}
+
+.category-link.active {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* ===== GRID ===== */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== CARD ===== */
+.property-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* arrows */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.55);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+/* ===== INFO ===== */
+.property-info {
+    padding: 15px;
+}
+
+.property-info h3 {
+    font-size: 1.05em;
+    margin-bottom: 6px;
+}
+
+.address {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.property-price {
+    font-weight: bold;
+    color: #2c7be5;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="category-header">
+    <a href="index.html" class="back-btn">← Назад</a>
+    <div class="category-title">Подвальные помещения</div>
+</header>
+
+<!-- 🔥 ВАЖНО: БЛОК, КОТОРОГО НЕ ХВАТАЛО -->
+<div class="category-nav">
+    <a href="basement.html" class="category-link active">Подвальные</a>
+    <a href="first-floor.html" class="category-link">1 этаж</a>
+    <a href="shops.html" class="category-link">Магазины</a>
+</div>
+
+<main>
+    <div id="properties-container" class="properties-grid"></div>
+</main>
+
+</div>
+
+<script>
+const basementData = [
+    {
+        title: "Подвальное помещение 45 кв.м.",
+        address: "ул. Центральная, 10",
+        description: "Сухое помещение, высота потолков 2.5м.",
+        price: "25 000 руб./мес.",
+        images: [
+            "images/Frame1.png",
+            "images/Frame2.png",
+            "images/Frame3.jpg"
+        ]
+    },
+    {
+        title: "Технический этаж 60 кв.м.",
+        address: "пр. Деловой, 25",
+        description: "Вентиляция, охрана 24/7.",
+        price: "35 000 руб./мес.",
+        images: [
+            "images/Frame2.png",
+            "images/Frame3.jpg",
+            "images/Frame4.jpg"
+        ]
+    }
+];
+
+const container = document.getElementById('properties-container');
+
+basementData.forEach(item => {
+    let index = 0;
+
+    const card = document.createElement('div');
+    card.className = 'property-card';
+
+    card.innerHTML = `
+        <div class="slider">
+            <img src="${item.images[0]}">
+            <button class="slider-btn prev">‹</button>
+            <button class="slider-btn next">›</button>
+        </div>
+        <div class="property-info">
+            <h3>${item.title}</h3>
+            <p class="address">📍 ${item.address}</p>
+            <p class="description">${item.description}</p>
+            <p class="property-price">${item.price}</p>
+        </div>
+    `;
+
+    const img = card.querySelector('img');
+    const prev = card.querySelector('.prev');
+    const next = card.querySelector('.next');
+
+    prev.addEventListener('click', () => {
+        index = (index - 1 + item.images.length) % item.images.length;
+        img.src = item.images[index];
+    });
+
+    next.addEventListener('click', () => {
+        index = (index + 1) % item.images.length;
+        img.src = item.images[index];
+    });
+
+    container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог помещений</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.profile-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a76a8 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.9);
+    background: #ddd;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+.profile-name {
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.profile-title {
+    font-size: 1.05em;
+    opacity: 0.9;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.description {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.buttons-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.category-btn {
+    padding: 20px;
+    border-radius: 14px;
+    border: 2px solid #4a76a8;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.category-btn:hover {
+    background: #4a76a8;
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: #2f2f2f;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.35em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-telegram-text {
+    font-size: 1em;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+.footer-phone {
+    display: block;
+    font-size: 1.35em;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-subtext {
+    font-size: 0.95em;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+}
+
+/* Голубая кнопка Telegram */
+.footer-social a {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #2AABEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(42,171,238,0.5);
+}
+
+.footer-social svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="profile-header">
+    <div class="profile-photo">
+        <img src="images/Logo.jpg" alt="Евгений Иванов">
+    </div>
+    <h1 class="profile-name">Евгений Иванов</h1>
+    <p class="profile-title">Специалист по коммерческой недвижимости</p>
+</header>
+
+<main class="content">
+    <div class="description">
+        Помогаю найти идеальное помещение для вашего бизнеса
+    </div>
+
+    <div class="buttons-grid">
+        <a href="basement.html" class="category-btn">🔽 Подвальные помещения</a>
+        <a href="first-floor.html" class="category-btn">🏬 Помещения на 1 этаже</a>
+        <a href="shops.html" class="category-btn">🛍️ Магазины</a>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-title">Оставайтесь на связи</div>
+
+    <div class="footer-telegram-text">
+        Для связи по Telegram нажмите ниже
+    </div>
+
+    <div class="footer-social">
+        <a href="https://t.me/snowbobr" target="_blank" aria-label="Telegram">
+            <svg viewBox="0 0 24 24">
+                <path d="M9.04 15.44l-.38 5.36c.55 0 .79-.24 1.08-.52l2.6-2.47 5.39 3.94c.99.55 1.7.26 1.95-.91l3.54-16.6h.01c.31-1.45-.52-2.02-1.49-1.66L1.15 9.77c-1.4.55-1.38 1.34-.24 1.69l5.36 1.67L18.6 6.42c.6-.4 1.15-.18.7.22"/>
+            </svg>
+        </a>
+    </div>
+
+    <a href="tel:+79265524725" class="footer-phone">
+        +7 (926) 552-47-25
+    </a>
+
+    <div class="footer-subtext">
+        (с 10:00 до 22:00)
+    </div>
+</footer>
+
+</div>
+</body>
+</html>
