@@ -1,141 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Помещения на 1 этаже | Каталог</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .category-header {
-            background: #27ae60;
-            color: white;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .back-btn {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .category-title {
-            font-size: 1.8em;
-            text-align: center;
-            flex-grow: 1;
-        }
-        .category-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        .category-link {
-            padding: 10px 20px;
-            background: white;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-            border: 2px solid #ddd;
-        }
-        .category-link.active {
-            background: #27ae60;
-            color: white;
-            border-color: #27ae60;
-        }
-        .properties-grid {
-            padding: 30px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 этаж</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <header class="category-header">
-            <a href="index.html" class="back-btn">← На главную</a>
-            <h1 class="category-title">🏬 Помещения на 1 этаже</h1>
-            <div style="width: 100px;"></div>
-        </header>
-        
-        <div class="category-nav">
-            <a href="basement.html" class="category-link">Подвальные</a>
-            <a href="first-floor.html" class="category-link active">1 этаж</a>
-            <a href="shops.html" class="category-link">Магазины</a>
+<div class="container">
+
+<header class="app-header floor">
+    <a href="index.html" class="back-btn">← Назад</a>
+    <div class="header-title">Помещения на 1 этаже</div>
+</header>
+
+<div class="category-nav">
+    <a href="basement.html" class="category-link basement">Подвальные</a>
+    <a href="first-floor.html" class="category-link floor active">1 этаж</a>
+    <a href="shops.html" class="category-link shops">Магазины</a>
+</div>
+
+<div class="properties-grid">
+    <div class="property-card">
+        <img src="images/Frame2.png" class="property-image">
+        <div class="property-info">
+            <h3>Помещение 50 кв.м.</h3>
+            <div class="address">📍 ул. Торговая, 12</div>
+            <div class="description">Отдельный вход, большие окна</div>
+            <div class="property-price">60 000 ₽ / мес</div>
         </div>
-        
-        <main>
-            <div id="properties-container" class="properties-grid">
-                <!-- Карточки будут здесь -->
-            </div>
-        </main>
-        
-        <footer>
-            <p>© 2024 Каталог помещений. <a href="index.html" style="color: #3498db;">Вернуться на главную</a></p>
-        </footer>
     </div>
-    
-    <script>
-        // Данные для помещений на 1 этаже
-        const firstFloorData = [
-            {
-                id: 1,
-                title: "Помещение на 1 этаже 50 кв.м.",
-                description: "Отдельный вход, большие окна, готово для офиса или магазина.",
-                price: "60 000 руб./мес.",
-                image: "images/Frame1.png",
-                address: "ул. Торговая, 12"
-            },
-            {
-                id: 2,
-                title: "Офисное помещение 75 кв.м.",
-                description: "Ремонт, кондиционер, санузел, парковка перед зданием.",
-                price: "85 000 руб./мес.",
-                image: "images/Frame2.png",
-                address: "пр. Офисный, 8"
-            },
-            {
-                id: 3,
-                title: "Помещение свободного назначения 100 кв.м.",
-                description: "Свободная планировка, высокие потолки, возможно разделение.",
-                price: "120 000 руб./мес.",
-                image: "images/Frame3.jpg",
-                address: "ул. Центральная, 25"
-            }
-        ];
-        
-        // Загружаем данные для этой страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('properties-container');
-            if (!container) {
-                console.error("Контейнер не найден!");
-                return;
-            }
-            
-            console.log("Создаем карточки для 1 этажа...");
-            container.innerHTML = '';
-            
-            firstFloorData.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'property-card';
-                card.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" class="property-image">
-                    <div class="property-info">
-                        <h3>${item.title}</h3>
-                        <p class="address">📍 ${item.address}</p>
-                        <p class="description">${item.description}</p>
-                        <p class="property-price">${item.price}</p>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-            
-            console.log("Готово! Создано карточек:", firstFloorData.length);
-        });
-    </script>
+</div>
+
+</div>
 </body>
 </html>

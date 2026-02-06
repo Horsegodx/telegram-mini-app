@@ -1,149 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазины | Каталог</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .category-header {
-            background: #e74c3c;
-            color: white;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .back-btn {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .category-title {
-            font-size: 1.8em;
-            text-align: center;
-            flex-grow: 1;
-        }
-        .category-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        .category-link {
-            padding: 10px 20px;
-            background: white;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-            border: 2px solid #ddd;
-        }
-        .category-link.active {
-            background: #e74c3c;
-            color: white;
-            border-color: #e74c3c;
-        }
-        .properties-grid {
-            padding: 30px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магазины</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <header class="category-header">
-            <a href="index.html" class="back-btn">← На главную</a>
-            <h1 class="category-title">🛍️ Магазины</h1>
-            <div style="width: 100px;"></div>
-        </header>
-        
-        <div class="category-nav">
-            <a href="basement.html" class="category-link">Подвальные</a>
-            <a href="first-floor.html" class="category-link">1 этаж</a>
-            <a href="shops.html" class="category-link active">Магазины</a>
+<div class="container">
+
+<header class="app-header shops">
+    <a href="index.html" class="back-btn">← Назад</a>
+    <div class="header-title">Магазины</div>
+</header>
+
+<div class="category-nav">
+    <a href="basement.html" class="category-link basement">Подвальные</a>
+    <a href="first-floor.html" class="category-link floor">1 этаж</a>
+    <a href="shops.html" class="category-link shops active">Магазины</a>
+</div>
+
+<div class="properties-grid">
+    <div class="property-card">
+        <img src="images/Frame3.jpg" class="property-image">
+        <div class="property-info">
+            <h3>Магазин 40 кв.м.</h3>
+            <div class="address">📍 ул. Покупательская, 15</div>
+            <div class="description">Витрины, высокая проходимость</div>
+            <div class="property-price">70 000 ₽ / мес</div>
         </div>
-        
-        <main>
-            <div id="properties-container" class="properties-grid">
-                <!-- Карточки будут здесь -->
-            </div>
-        </main>
-        
-        <footer>
-            <p>© 2024 Каталог помещений. <a href="index.html" style="color: #3498db;">Вернуться на главную</a></p>
-        </footer>
     </div>
-    
-    <script>
-        // Данные для магазинов
-        const shopsData = [
-            {
-                id: 1,
-                title: "Магазин 40 кв.м. в спальном районе",
-                description: "Витринные окна, отдельный вход, высокая проходимость.",
-                price: "70 000 руб./мес.",
-                image: "images/Frame1.png",
-                address: "ул. Покупательская, 15"
-            },
-            {
-                id: 2,
-                title: "Торговый павильон 30 кв.м.",
-                description: "В торговом центре, ремонт, кондиционер, охрана.",
-                price: "55 000 руб./мес.",
-                image: "images/Frame2.png",
-                address: "ТЦ 'Сити', 2 этаж"
-            },
-            {
-                id: 3,
-                title: "Продуктовый магазин 60 кв.м.",
-                description: "Холодильные витрины, складское помещение, парковка.",
-                price: "90 000 руб./мес.",
-                image: "images/Frame3.jpg",
-                address: "ул. Продуктовая, 8"
-            },
-            {
-                id: 4,
-                title: "Магазин одежды 80 кв.м.",
-                description: "Дизайнерский ремонт, примерочные, витринное остекление.",
-                price: "110 000 руб./мес.",
-                image: "images/Frame4.jpg",
-                address: "ул. Модная, 22"
-            }
-        ];
-        
-        // Загружаем данные для этой страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('properties-container');
-            if (!container) {
-                console.error("Контейнер не найден!");
-                return;
-            }
-            
-            console.log("Создаем карточки для магазинов...");
-            container.innerHTML = '';
-            
-            shopsData.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'property-card';
-                card.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" class="property-image">
-                    <div class="property-info">
-                        <h3>${item.title}</h3>
-                        <p class="address">📍 ${item.address}</p>
-                        <p class="description">${item.description}</p>
-                        <p class="property-price">${item.price}</p>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-            
-            console.log("Готово! Создано карточек:", shopsData.length);
-        });
-    </script>
+</div>
+
+</div>
 </body>
 </html>
