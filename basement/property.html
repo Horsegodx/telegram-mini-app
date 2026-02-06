@@ -11,7 +11,7 @@
 <div class="container">
 
   <div class="property-header">
-    <button onclick="history.back()">←</button>
+    <button class="back-btn" id="backBtn">←</button>
     <button onclick="shareProperty()">Поделиться</button>
   </div>
 
@@ -31,6 +31,31 @@
 </div>
 
 <script>
+
+
+const backBtn = document.getElementById("backBtn");
+
+backBtn.addEventListener("click", () => {
+  // если есть история — идём назад
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    // если истории нет — определяем категорию по id
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    let fallback = "/index.html";
+
+    if (id?.startsWith("basement")) fallback = "/basement/basement.html";
+    if (id?.startsWith("floor")) fallback = "/first-floor/first-floor.html";
+    if (id?.startsWith("shop")) fallback = "/shops/shops.html";
+
+    window.location.href = fallback;
+  }
+});
+
+
+
 const properties = {
   "basement-1": {
     title: "Подвальное помещение 45 кв.м.",
@@ -96,3 +121,5 @@ function shareProperty() {
 
 </body>
 </html>
+
+
