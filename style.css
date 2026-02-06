@@ -219,3 +219,21 @@ body {
   color: white;
   text-decoration: none;
 }
+
+.property-info h3 {
+  color: #ffffff;
+}
+
+.address {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.property-price {
+  color: #ffffff;
+  font-weight: 700;
+}
+
