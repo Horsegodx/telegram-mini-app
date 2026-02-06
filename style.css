@@ -419,4 +419,37 @@ a {
   text-decoration: none;
 }
 
+/* ===== APP HEADER ===== */
+
+.app-header {
+  position: relative;
+  background: var(--cold-sky);
+  color: white;
+  padding: 22px 20px;
+  text-align: center;
+}
+
+/* Кнопка "Назад / На главную" */
+.header-back {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.header-back:hover {
+  opacity: 1;
+}
+
+/* Заголовок по центру */
+.header-title {
+  font-size: 1.4em;
+  font-weight: 700;
+}
 
