@@ -18,7 +18,7 @@ bot.onText(/\/start/, (msg) => {
 Нажмите кнопку ниже, чтобы открыть каталог ⬇️`,
     {
       reply_markup: {
-        keyboard: [
+        inline_keyboard: [
           [
             {
               text: "📂 Открыть каталог",
@@ -27,11 +27,10 @@ bot.onText(/\/start/, (msg) => {
               }
             }
           ]
-        ],
-        resize_keyboard: true,
-        one_time_keyboard: false
+        ]
       }
     }
   );
 });
+
 
