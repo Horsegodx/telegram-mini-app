@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Помещение</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+  <div class="property-header">
+    <button onclick="history.back()">← Назад</button>
+    <button onclick="shareProperty()">Поделиться</button>
+  </div>
+
+  <div class="property-slider">
+    <img id="sliderImage" src="">
+    <button class="slider-btn prev" onclick="prevImage()">‹</button>
+    <button class="slider-btn next" onclick="nextImage()">›</button>
+  </div>
+
+  <div class="property-page-content">
+    <div class="property-page-title" id="title"></div>
+    <div class="property-page-address" id="address"></div>
+    <div class="property-page-description" id="description"></div>
+    <div class="property-page-price" id="price"></div>
+  </div>
+
+</div>
+
+<script>
+const properties = {
+  "basement-1": {
+    title: "Подвальное помещение 45 кв.м.",
+    address: "📍 ул. Центральная, 10",
+    description: "Сухое помещение, потолки 2.5 м. Отлично под склад или студию.",
+    price: "25 000 ₽ / мес",
+    images: [
+      "images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_1.jpg",
+      "images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_2.jpg",
+      "images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_3.jpg",
+      "images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_4.jpg"
+    ]
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const item = properties[id];
+
+let index = 0;
+
+document.getElementById("title").innerText = item.title;
+document.getElementById("address").innerText = item.address;
+document.getElementById("description").innerText = item.description;
+document.getElementById("price").innerText = item.price;
+document.getElementById("sliderImage").src = item.images[0];
+
+function nextImage() {
+  index = (index + 1) % item.images.length;
+  document.getElementById("sliderImage").src = item.images[index];
+}
+
+function prevImage() {
+  index = (index - 1 + item.images.length) % item.images.length;
+  document.getElementById("sliderImage").src = item.images[index];
+}
+
+function shareProperty() {
+  const url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title: item.title, url });
+  } else {
+    navigator.clipboard.writeText(url);
+    alert("Ссылка скопирована");
+  }
+}
+</script>
+
+</body>
+</html>
