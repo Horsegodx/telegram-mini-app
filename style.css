@@ -2,7 +2,7 @@
   --wool: #dddfde;
   --caramel: #c1b3a8;
   --cookies: #a48e80;
-  --cold-sky: #9ab5c6;
+  --cold-sky: #6991aa;
   --frost: #365a72;
   --white: #ffffff;
 }
@@ -220,5 +220,24 @@ body {
   text-decoration: none;
 }
 
+.category-btn {
+  color: var(--frost); /* БЕЛЫЙ ТЕКСТ */
+}
 
+.property-info h3 {
+  color: var(--frost);
+}
+
+.address {
+  color: var(--frost); 
+}
+
+.description {
+  color: var(--frost); 
+}
+
+.property-price {
+  color:var(--frost); 
+  font-weight: 700;
+}
 
