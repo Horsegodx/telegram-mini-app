@@ -3,18 +3,17 @@ export default async function handler(req, res) {
     return res.status(200).send("OK");
   }
 
-  const TELEGRAM_TOKEN = "8576035098:AAHeIupZSQsZLD0aUUBsBvTZAxlsCqdf8aM";
+  const TELEGRAM_TOKEN = process.env.BOT_TOKEN;
   const WEB_APP_URL = "https://telegram-mini-app-nu-jet.vercel.app";
 
   const body = req.body;
-  const chatId = body.message?.chat?.id;
-  const text = body.message?.text;
+  const chatId = body?.message?.chat?.id;
+  const text = body?.message?.text;
 
   if (!chatId) {
     return res.status(200).end();
   }
 
-  // /start
   if (text === "/start") {
     const message = `Добрый день 👋
 
@@ -34,7 +33,9 @@ export default async function handler(req, res) {
             [
               {
                 text: "📂 Открыть каталог",
-                web_app: { url: WEB_APP_URL }
+                web_app: {
+                  url: WEB_APP_URL
+                }
               }
             ]
           ]
