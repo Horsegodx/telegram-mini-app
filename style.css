@@ -324,3 +324,16 @@ body {
   color: var(--frost);
 }
 
+/* Убираем стандартный вид ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Карточка как ссылка */
+.property-card {
+  display: block;
+  color: var(--frost);
+}
+
+
