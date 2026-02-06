@@ -238,6 +238,6 @@ body {
 }
 
 .category-btn {
-  color: #ffffff; /* БЕЛЫЙ ТЕКСТ */
+  color: var(--cold-sky); /* БЕЛЫЙ ТЕКСТ */
 }
 
