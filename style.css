@@ -67,45 +67,77 @@ body {
 }
 
 .category-btn {
-  background: var(--caramel);
-  padding: 22px;
+  width: 100%;
+  max-width: 340px; /* 🔥 УМЕНЬШАЕМ ДЛИНУ */
+  margin: 0 auto;
+
+  padding: 18px 22px; /* чуть компактнее */
   border-radius: 18px;
+
+  background: #dfd2c8; /* caramel */
+  color: #6f8fa6; /* cold sky */
+
   font-size: 1.05em;
   font-weight: 600;
+
   text-decoration: none;
-  color: var(--cold-sky);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: all .25s ease;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  transition: all 0.25s ease;
 }
 
+/* hover */
 .category-btn:hover {
-  transform: translateY(-3px);
-  background: var(--cookies);
+  background: #d1c3b8;
+  transform: translateY(-2px);
 }
 
-/* ===== CATEGORY NAV ===== */
+
+/* ===== CATEGORY NAV (АККУРАТНЫЕ ТАБЫ) ===== */
 .category-nav {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  padding: 20px;
+  gap: 12px;
+  padding: 16px;
+  background: transparent;
 }
 
+/* Кнопка */
 .category-link {
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: var(--white);
-  border: 2px solid var(--caramel);
-  text-decoration: none;
-  color: var(--cold-sky);
+  min-width: 110px;
+  padding: 10px 14px;
+  text-align: center;
+
+  font-size: 0.9em;
   font-weight: 600;
+  letter-spacing: 0.2px;
+
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--cold-sky);
+
+  border: 2px solid rgba(59, 95, 111, 0.25);
+  text-decoration: none;
+
+  transition: all 0.25s ease;
 }
 
+/* Активная */
 .category-link.active {
   background: var(--cold-sky);
-  color: white;
+  color: #ffffff;
   border-color: var(--cold-sky);
 }
+
+/* Небольшой hover */
+.category-link:hover {
+  transform: translateY(-1px);
+}
+
 
 /* ===== GRID ===== */
 .properties-grid {
@@ -153,7 +185,7 @@ body {
 .property-price {
   font-size: 1.25em;
   font-weight: 700;
-  color: var(--frost);
+  color: var(--white);
 }
 
 /* ===== FOOTER ===== */
