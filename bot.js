@@ -1,6 +1,6 @@
 const TelegramBot = require("node-telegram-bot-api");
 
-const token = "8576035098:AAHeIupZSQsZLD0aUUBsBvTZAxlsCqdf8aM";
+const token = '8576035098:AAHeIupZSQsZLD0aUUBsBvTZAxlsCqdf8aM';
 const webAppUrl = "https://telegram-mini-app-nu-jet.vercel.app";
 
 const bot = new TelegramBot(token, { polling: true });
