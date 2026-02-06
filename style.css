@@ -379,3 +379,44 @@ a {
 }
 
 
+/* ===== FOOTER (ЕДИНЫЙ ДЛЯ ВСЕХ СТРАНИЦ) ===== */
+
+.site-footer {
+  background: var(--cold-sky);
+  color: white;
+  text-align: center;
+  padding: 36px 20px 40px;
+  margin-top: 40px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.footer-social a {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #2AABEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social svg {
+  width: 26px;
+  height: 26px;
+  fill: white;
+}
+
+.footer-phone {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+
