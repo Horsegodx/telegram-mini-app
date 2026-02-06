@@ -337,3 +337,45 @@ a {
 }
 
 
+
+/* ===== PROPERTY PAGE CONTENT ===== */
+
+.property-page-content {
+  background: var(--caramel);
+  border-radius: 22px;
+  padding: 26px 24px;
+  margin: 24px 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* Заголовок */
+.property-page-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--frost);
+  margin-bottom: 10px;
+}
+
+/* Адрес */
+.property-page-address {
+  font-size: 0.95em;
+  color: var(--frost);
+  margin-bottom: 12px;
+}
+
+/* Описание */
+.property-page-description {
+  font-size: 0.95em;
+  line-height: 1.55;
+  color: var(--frost);
+  margin-bottom: 18px;
+}
+
+/* Цена */
+.property-page-price {
+  font-size: 1.35em;
+  font-weight: 700;
+  color: var(--frost);
+}
+
+
