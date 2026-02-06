@@ -1,9 +1,9 @@
 :root {
-  --wool: #DEE0DF;
-  --caramel: #C1B3AA;
-  --cookies: #A58E80;
-  --cold-sky: #6991AA;
-  --frost: #365A72;
+  --wool: #dddfde;
+  --caramel: #c1b3a8;
+  --cookies: #a48e80;
+  --cold-sky: #365a72;
+  --frost: #6991aa;
   --white: #ffffff;
 }
 
@@ -220,24 +220,5 @@ body {
   text-decoration: none;
 }
 
-.property-info h3 {
-  color: #ffffff;
-}
 
-.address {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.description {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.property-price {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.category-btn {
-  color: var(--cold-sky); /* БЕЛЫЙ ТЕКСТ */
-}
 
