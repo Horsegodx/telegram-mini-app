@@ -1,0 +1,28 @@
+const TelegramBot = require("node-telegram-bot-api");
+
+const token = "8576035098:AAHeIupZSQsZLD0aUUBsBvTZAxlsCqdf8aM";
+const webAppUrl = "https://telegram-mini-app-nu-jet.vercel.app";
+
+const bot = new TelegramBot(token, { polling: true });
+
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+
+  const text = `
+Добрый день 👋
+
+Вы зашли в бота, где можно посмотреть помещения
+от Евгения Иванова 🏢
+
+Нажмите кнопку ниже, чтобы открыть каталог ⬇️
+`;
+
+  bot.sendMessage(chatId, text, {
+    reply_markup: {
+      keyboard: [
+        [{ text: '📂 Открыть каталог' }]
+      ],
+      resize_keyboard: true
+    }
+  });
+});

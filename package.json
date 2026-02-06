@@ -1,0 +1,24 @@
+{
+  "name": "telegram-property",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Horsegodx/telegram-mini-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Horsegodx/telegram-mini-app/issues"
+  },
+  "homepage": "https://github.com/Horsegodx/telegram-mini-app#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.67.0"
+  }
+}
