@@ -495,4 +495,33 @@ a {
 }
 
 
+/* ===== Кнопка назад везде ===== */
+
+.header-back {
+  font-size: 2.2rem;          
+  font-weight: 600;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-decoration: none;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+/* hover / tap */
+.header-back:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+
 
