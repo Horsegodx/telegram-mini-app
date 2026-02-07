@@ -44,13 +44,12 @@
 
 <script>
 /* ===============================
-   1️⃣ ИНИЦИАЛИЗАЦИЯ TELEGRAM
+   1️⃣ TELEGRAM
 ================================ */
 const tg = window.Telegram?.WebApp;
 
 if (tg) {
-  tg.ready();            // обязательно для Android
-  tg.expand();           // по желанию
+  tg.ready();
 }
 
 /* ===============================
@@ -91,39 +90,52 @@ const item = properties[id];
 
 let index = 0;
 
-document.getElementById("title").textContent = item.title;
-document.getElementById("address").textContent = item.address;
-document.getElementById("description").textContent = item.description;
-document.getElementById("price").textContent = item.price;
-document.getElementById("sliderImage").src = item.images[0];
+title.textContent = item.title;
+address.textContent = item.address;
+description.textContent = item.description;
+price.textContent = item.price;
+sliderImage.src = item.images[0];
 
 /* ===============================
    5️⃣ СЛАЙДЕР
 ================================ */
-document.getElementById("nextBtn").onclick = () => {
+nextBtn.onclick = () => {
   index = (index + 1) % item.images.length;
   sliderImage.src = item.images[index];
 };
 
-document.getElementById("prevBtn").onclick = () => {
+prevBtn.onclick = () => {
   index = (index - 1 + item.images.length) % item.images.length;
   sliderImage.src = item.images[index];
 };
 
 /* ===============================
-   6️⃣ ПОДЕЛИТЬСЯ (КАК НА СКРИНЕ)
+   6️⃣ ПОДЕЛИТЬСЯ (iOS нормально, Android через браузер)
 ================================ */
-document.getElementById("shareBtn").addEventListener("click", () => {
+shareBtn.addEventListener("click", () => {
   const url = window.location.href;
-  const text = item.title;
 
-  // Telegram Mini App → родной Share Sheet
-  if (tg) {
-    tg.openTelegramLink(
-      `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`
-    );
-  } else if (navigator.share) {
-    navigator.share({ title: text, url });
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  // ✅ iOS — сразу системный Share Sheet
+  if (navigator.share && isIOS) {
+    navigator.share({
+      title: item.title,
+      url: url
+    });
+    return;
+  }
+
+  // ✅ Android в Telegram — открываем браузер
+  if (tg && isAndroid) {
+    tg.openLink(url);
+    return;
+  }
+
+  // ✅ обычный браузер
+  if (navigator.share) {
+    navigator.share({ title: item.title, url });
   } else {
     navigator.clipboard.writeText(url);
     alert("Ссылка скопирована");
