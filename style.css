@@ -453,3 +453,44 @@ a {
   font-weight: 700;
 }
 
+
+/* ===== PRICE FILTER ===== */
+.price-filter {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.price-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.price-btn {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 2px solid rgba(54, 90, 114, 0.25);
+
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--cold-sky);
+
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.price-btn.active {
+  background: var(--cold-sky);
+  color: white;
+  border-color: var(--cold-sky);
+}
+
+.price-btn:hover {
+  transform: translateY(-1px);
+}
+
