@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Подвальные помещения</title>
 
-  <!-- CSS на уровень выше -->
+  <!-- общий CSS -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -14,90 +14,102 @@
 
   <!-- HEADER -->
   <header class="app-header">
-  <a href="../index.html" class="header-back">←</a>
-  <div class="header-title">Подвальные помещения</div>
-</header>
+    <a href="../index.html" class="header-back">←</a>
+    <div class="header-title">Подвальные помещения</div>
+  </header>
 
-
-  <!-- НАВИГАЦИЯ -->
+  <!-- КАТЕГОРИИ -->
   <div class="category-nav">
     <a class="category-link active" href="basement.html">Подвалы</a>
     <a class="category-link" href="../first-floor/first-floor.html">1 этаж</a>
     <a class="category-link" href="../shops/shops.html">Магазины</a>
   </div>
 
-  <div class="price-filter-wrapper">
-  <div class="price-filter">
-    <button class="price-btn active" data-min="0" data-max="999">Все</button>
-    <button class="price-btn" data-min="5" data-max="10">5–10 млн</button>
-    <button class="price-btn" data-min="10" data-max="15">10–15 млн</button>
-    <button class="price-btn" data-min="15" data-max="20">15–20 млн</button>
-    <button class="price-btn" data-min="20" data-max="30">20–30 млн</button>
-    <button class="price-btn" data-min="30" data-max="999">30+ млн</button>
+  <!-- ===== ФИЛЬТР ПО ЦЕНЕ (ОТДЕЛЬНАЯ СЕТКА) ===== -->
+  <div class="price-filter-bar">
+    <button class="price-filter-btn active" data-range="all">Все</button>
+    <button class="price-filter-btn" data-min="5000000" data-max="10000000">5–10 млн</button>
+    <button class="price-filter-btn" data-min="10000000" data-max="15000000">10–15 млн</button>
+    <button class="price-filter-btn" data-min="15000000" data-max="20000000">15–20 млн</button>
+    <button class="price-filter-btn" data-min="20000000" data-max="30000000">20–30 млн</button>
+    <button class="price-filter-btn" data-min="30000000">30+ млн</button>
   </div>
-</div>
 
-
-
-  <!-- КАРТОЧКИ -->
+  <!-- ===== КАРТОЧКИ ===== -->
   <div class="properties-grid">
 
     <!-- КАРТОЧКА 1 -->
-    <a href="property.html?id=basement-1" class="property-card">
-      <img src="../images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_1.jpg" class="property-image" alt="">
+    <a href="property.html?id=basement-1"
+       class="property-card"
+       data-price="25450000">
+
+      <img src="../images/Volokolamsky_pr_6_k1/Volokolamsky_pr_6_k1_1.jpg"
+           class="property-image" alt="">
+
       <div class="property-info">
         <h3>Подвальное помещение 45 кв.м.</h3>
-        <div class="address">📍 ул. Волоколамский пр 6 к1</div>
+        <div class="address">📍 ул. Волоколамский пр 6 к1</div>
         <div class="description">Сухое помещение, потолки 2.5м</div>
-        <div class="property-price">25 000 000 ₽с</div>
-        <div class="property-card" data-price="25">
+        <div class="property-price">25 450 000 ₽</div>
       </div>
     </a>
 
     <!-- КАРТОЧКА 2 -->
-    <a href="property.html?id=basement-2" class="property-card">
-      <img src="../images/Frame2.png" class="property-image" alt="">
+    <a href="property.html?id=basement-2"
+       class="property-card"
+       data-price="10000000">
+
+      <img src="../images/Frame2.png"
+           class="property-image" alt="">
+
       <div class="property-info">
         <h3>Технический этаж 60 кв.м.</h3>
         <div class="address">📍 пр. Деловой, 25</div>
         <div class="description">Вентиляция, охрана 24/7</div>
         <div class="property-price">10 000 000 ₽</div>
-        <div class="property-card" data-price="10">
       </div>
     </a>
 
   </div>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-  <div class="footer-social">
-    <a href="https://t.me/snowbobr" target="_blank" aria-label="Telegram">
-      <svg viewBox="0 0 24 24">
-        <path d="M9.04 15.44l-.38 5.36c.55 0 .79-.24 1.08-.52l2.6-2.47 5.39 3.94c.99.55 1.7.26 1.95-.91l3.54-16.6c.31-1.45-.52-2.02-1.49-1.66L1.15 9.77c-1.4.55-1.38 1.34-.24 1.69l5.36 1.67L18.6 6.42"/>
-      </svg>
+    <div class="footer-social">
+      <a href="https://t.me/snowbobr" target="_blank" aria-label="Telegram">
+        <svg viewBox="0 0 24 24">
+          <path d="M9.04 15.44l-.38 5.36c.55 0 .79-.24 1.08-.52l2.6-2.47 5.39 3.94c.99.55 1.7.26 1.95-.91l3.54-16.6c.31-1.45-.52-2.02-1.49-1.66L1.15 9.77c-1.4.55-1.38 1.34-.24 1.69l5.36 1.67L18.6 6.42"/>
+        </svg>
+      </a>
+    </div>
+
+    <a href="tel:+79265524725" class="footer-phone">
+      +7 (926) 552-47-25
     </a>
-  </div>
+  </footer>
 
-  <a href="tel:+79265524725" class="footer-phone">
-    +7 (926) 552-47-25
-  </a>
-</footer>
+</div>
 
+<!-- ===== JS ФИЛЬТРА ===== -->
 <script>
-const priceButtons = document.querySelectorAll(".price-btn");
+const filterButtons = document.querySelectorAll(".price-filter-btn");
 const cards = document.querySelectorAll(".property-card");
 
-priceButtons.forEach(btn => {
+filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    priceButtons.forEach(b => b.classList.remove("active"));
+
+    filterButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    const min = parseFloat(btn.dataset.min);
-    const max = parseFloat(btn.dataset.max);
+    const min = btn.dataset.min ? Number(btn.dataset.min) : 0;
+    const max = btn.dataset.max ? Number(btn.dataset.max) : Infinity;
 
     cards.forEach(card => {
-      const price = parseFloat(card.dataset.price);
+      const price = Number(card.dataset.price);
 
-      if (price >= min && price <= max) {
+      if (
+        btn.dataset.range === "all" ||
+        (price >= min && price <= max)
+      ) {
         card.style.display = "";
       } else {
         card.style.display = "none";
@@ -107,6 +119,5 @@ priceButtons.forEach(btn => {
 });
 </script>
 
-</div>
 </body>
 </html>
