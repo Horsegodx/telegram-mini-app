@@ -520,3 +520,67 @@ a {
 .header-back:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
+
+/* ===== HEADER С КНОПКАМИ ===== */
+.property-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--cold-sky);
+  color: white;
+
+  height: 64px; /* 🔴 высота шапки */
+}
+
+/* ===== КНОПКА НАЗАД ===== */
+.back-btn {
+  position: absolute;
+  left: 12px;                /* 🔴 отступ от левого края */
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 2.4rem;         /* 🔴 РАЗМЕР СТРЕЛКИ */
+  padding: 10px 14px;        /* 🔴 РАЗМЕР КНОПКИ */
+
+  background: transparent;
+  border: none;
+  color: white;
+
+  border-radius: 14px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.back-btn:active {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+/* ===== КНОПКА ПОДЕЛИТЬСЯ ===== */
+.share-btn {
+  position: absolute;
+  right: 12px;               /* 🔴 отступ от правого края */
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 1.15rem;        /* 🔴 РАЗМЕР ТЕКСТА */
+  font-weight: 600;
+
+  padding: 10px 16px;        /* 🔴 РАЗМЕР КНОПКИ */
+
+  background: transparent;
+  border: none;
+  color: white;
+
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.share-btn:active {
+  background-color: rgba(0, 0, 0, 0.18);
+}
