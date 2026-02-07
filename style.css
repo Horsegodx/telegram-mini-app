@@ -425,7 +425,7 @@ a {
   position: relative;
   background: var(--cold-sky);
   color: white;
-  padding: 16px 16px 16px 2px ;
+  padding: 8px 8px 8px 2px ;
   text-align: center;
 }
 
@@ -504,7 +504,7 @@ a {
   font-size: 1.8rem;
 
   /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
-  padding: 6px 8px 6px 2 px;
+  padding: 4px 6px 4px 2 px;
 
   line-height: 1;
   border-radius: 10px;
@@ -523,29 +523,27 @@ a {
 
 
 
-/* ===== HEADER ===== */
-.property-header {
-  position: relative;
-  height: 68px;
-  background: var(--cold-sky);
-}
+
 
 /* ===== СТРЕЛКА НАЗАД ===== */
 .back-btn {
-  position: absolute;
-  left: 8px;                 /* 🔴 СДВИГ ВЛЕВО (МЕНЯЙ ЭТО) */
-  top: 50%;
-  transform: translateY(-50%);
+ text-decoration: none;
+  color: white;
 
-  font-size: 3.2rem;         /* 🔴 РАЗМЕР СТРЕЛКИ (В 2 РАЗА БОЛЬШЕ) */
-  padding: 10px 14px;
+  /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
+  font-size: 1.8rem;
+
+  /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
+  padding: 4px 6px 4px 2 px;
+
+  line-height: 1;
+  border-radius: 10px;
 
   background: transparent;
   border: none;
-  color: white;
-  border-radius: 16px;
+  outline: none;
 
-  cursor: pointer;
+  transition: background-color 0.15s ease;
 }
 
 .back-btn:active {
@@ -559,7 +557,7 @@ a {
   top: 50%;
   transform: translateY(-50%);
 
-  font-size: 1.4rem;         /* 🔴 РАЗМЕР ТЕКСТА */
+  font-size: 2.4rem;         /* 🔴 РАЗМЕР ТЕКСТА */
   font-weight: 600;
 
   padding: 10px 18px;
