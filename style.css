@@ -117,23 +117,28 @@ body {
 }
 
 .category-btn {
-  max-width: 340px;
+  width: 100%;                 /* растягивается внутри контейнера */
+  max-width: 340px;            /* 🔴 ОДИНАКОВАЯ ШИРИНА ДЛЯ ВСЕХ */
   margin: 0 auto;
+
   padding: 18px 22px;
+  border-radius: 18px;
 
   background: var(--caramel);
-  border-radius: 18px;
+  color: var(--frost);
 
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--frost);
 
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;     /* 🔴 ЦЕНТР ПО ГОРИЗОНТАЛИ */
+  gap: 12px;
 
-  transition: transform 0.25s ease, background 0.25s ease;
+  text-align: center;          /* 🔴 ТЕКСТ ПО ЦЕНТРУ */
+  transition: background 0.25s ease, transform 0.25s ease;
 }
+
 
 .category-btn:hover {
   background: #d1c3b8;
