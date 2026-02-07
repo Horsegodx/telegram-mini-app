@@ -241,61 +241,77 @@ body {
 
 
 
-/* =====================================================
-   🧱 СЕТКА КАРТОЧЕК
-   ===================================================== */
+/* =========================
+   🏠 КАРТОЧКИ ОБЪЕКТОВ
+   ========================= */
+
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 26px;
-  padding: 30px 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд */
+  gap: 20px;
+  padding: 20px 16px;
 }
 
-/* ===== КАРТОЧКА ОБЪЕКТА: ТЕКСТ КАК У ЦИАН ===== */
-.property-info {
-  padding: 22px 24px;        /* 🔹 ровные боковые отступы */
-  text-align: left;
+/* На очень узких экранах — 1 карточка */
+@media (max-width: 520px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Заголовок */
-.property-info h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--frost);
+/* ===== КАРТОЧКА ===== */
+.property-card {
+  background: var(--caramel);
+  border-radius: 22px;
+  overflow: hidden;
 
-  margin-bottom: 12px;       /* 🔹 воздух под заголовком */
-  line-height: 1.3;
-}
-
-/* Адрес */
-.property-info .address {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column;
 
-  font-size: 0.95rem;
-  color: var(--frost);
-
-  margin-bottom: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* Описание */
-.property-info .description {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--frost);
-
-  margin-bottom: 18px;
+/* ===== КАРТИНКА ===== */
+.property-image {
+  width: 100%;
+  height: 200px;              /* 🔴 ФИКСИРОВАННАЯ ВЫСОТА */
+  object-fit: cover;
 }
 
-/* Цена */
-.property-info .property-price {
-  font-size: 1.45rem;
+/* ===== ТЕКСТ ===== */
+.property-info {
+  padding: 18px 18px 20px;
+  text-align: left;           /* 🔴 КАК У ЦИАН */
+}
+
+.property-info h3 {
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--frost);
-
-  margin-top: 4px;
+  margin-bottom: 8px;
 }
+
+.address {
+  font-size: 0.9rem;
+  color: var(--frost);
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--frost);
+  margin-bottom: 14px;
+}
+
+/* ===== ЦЕНА ===== */
+.property-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--frost);
+}
+
 
 
 /* =====================================================
