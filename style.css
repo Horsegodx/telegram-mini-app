@@ -425,7 +425,7 @@ a {
   position: relative;
   background: var(--cold-sky);
   color: white;
-  padding: 16px 16px 16px 4px ;
+  padding: 16px 16px 16px 2px ;
   text-align: center;
 }
 
@@ -501,10 +501,10 @@ a {
   color: white;
 
   /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
-  font-size: 2.0rem;
+  font-size: 1.8rem;
 
   /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
-  padding: 6px 8px 6px 4 px;
+  padding: 6px 8px 6px 2 px;
 
   line-height: 1;
   border-radius: 10px;
