@@ -495,38 +495,13 @@ a {
 }
 
 
-/* ===== ОБЩИЙ КОНТЕЙНЕР ===== */
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #e6e6e4;
-}
-
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-/* ===== HEADER ===== */
-.app-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  background: #7f9bb0;
-  color: white;
-
-  padding: 16px;
-  border-radius: 0 0 20px 20px;
-}
-
 /* ===== КНОПКА НАЗАД ===== */
 .header-back {
   text-decoration: none;
   color: white;
 
   /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
-  font-size: 1.8rem;
+  font-size: 2.4rem;
 
   /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
   padding: 6px 10px;
@@ -545,14 +520,3 @@ body {
 .header-back:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
-
-/* ===== ЗАГОЛОВОК ===== */
-.header-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-
-
-
-
