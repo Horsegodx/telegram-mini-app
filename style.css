@@ -314,50 +314,100 @@ body {
 
 
 /* =====================================================
-   📄 СТРАНИЦА ОБЪЕКТА
+   🧾 СТРАНИЦА ОБЪЕКТА
    ===================================================== */
+
+/* HEADER */
 .property-header {
   position: relative;
   height: 68px;
   background: var(--cold-sky);
 }
 
-.back-btn {
+.back-btn,
+.share-btn {
   position: absolute;
-  left: 12px;
   top: 50%;
   transform: translateY(-50%);
 
-  font-size: 3rem;
-  padding: 6px 10px;
-
   background: transparent;
-  color: var(--white);
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  padding: 10px 16px;
   border-radius: 14px;
 }
 
-.back-btn:active {
-  background: rgba(0,0,0,0.18);
+.back-btn {
+  left: 8px;
+  font-size: 2rem;
 }
 
 .share-btn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  font-size: 1.2rem;
+  right: 8px;
+  font-size: 1.1rem;
   font-weight: 600;
-
-  padding: 8px 14px;
-  background: transparent;
-  color: var(--white);
-  border-radius: 14px;
 }
 
+.back-btn:active,
 .share-btn:active {
   background: rgba(0,0,0,0.18);
 }
+
+/* IMAGE */
+.property-image-wrap {
+  padding: 16px;
+}
+
+.property-image-wrap img {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+/* CARD CONTENT */
+.property-card-page {
+  background: var(--caramel);
+  border-radius: 22px;
+
+  margin: 16px;
+  padding: 22px;
+
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* TITLE */
+.property-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--frost);
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* ADDRESS */
+.property-address {
+  font-size: 0.95rem;
+  color: var(--frost);
+  margin-bottom: 12px;
+}
+
+/* DESCRIPTION */
+.property-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--frost);
+  margin-bottom: 18px;
+}
+
+/* PRICE */
+.property-price-page {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--frost);
+}
+
 
 /* =====================================================
    📸 СЛАЙДЕР
@@ -385,33 +435,46 @@ body {
 }
 
 /* =====================================================
-   📞 FOOTER (ЕДИНЫЙ)
+   📞 FOOTER (РОВНО, КРАСИВО, ПО ЦЕНТРУ)
    ===================================================== */
+
 .site-footer {
-  margin-top: auto;
   background: var(--cold-sky);
-  color: var(--white);
-  text-align: center;
-  padding: 36px 20px 40px;
-}
+  padding: 36px 20px 44px;
 
-.footer-social {
   display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
-.footer-social a {
-  width: 54px;
-  height: 54px;
+/* ===== TELEGRAM BUTTON ===== */
+.tg-btn {
+  width: 64px;
+  height: 64px;
+
   border-radius: 50%;
   background: #2AABEE;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  text-decoration: none;
 }
 
+/* ИКОНКА */
+.tg-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* ===== PHONE ===== */
 .footer-phone {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.3px;
 }
