@@ -313,7 +313,7 @@ body {
 
 
 /* ===============================
-   🧾 СТРАНИЦА ОБЪЕКТА — ФИНАЛ
+   🧾 СТРАНИЦА ОБЪЕКТА (ФИНАЛ)
    =============================== */
 
 /* HEADER */
@@ -323,6 +323,7 @@ body {
   background: var(--cold-sky);
 }
 
+/* Кнопки */
 .back-btn,
 .share-btn {
   position: absolute;
@@ -330,7 +331,7 @@ body {
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: #fff;
+  color: white;
   cursor: pointer;
   padding: 10px 16px;
   border-radius: 14px;
@@ -352,12 +353,17 @@ body {
   background: rgba(0,0,0,0.18);
 }
 
-/* SLIDER */
+/* ===============================
+   📸 СЛАЙДЕР
+   =============================== */
+
 .property-slider {
   margin: 16px;
   border-radius: 22px;
   overflow: hidden;
-  height: 260px; /* 🔴 ВАЖНО: фиксируем высоту */
+  height: 260px;
+  position: relative;
+  background: var(--cookies);
 }
 
 .property-slider img {
@@ -366,41 +372,109 @@ body {
   object-fit: cover;
 }
 
-/* CONTENT CARD */
-.property-card-page {
+/* Кнопки листания */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(54, 90, 114, 0.7);
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.slider-btn.prev {
+  left: 12px;
+}
+
+.slider-btn.next {
+  right: 12px;
+}
+
+/* ===============================
+   🧾 КАРТОЧКА ОПИСАНИЯ
+   =============================== */
+
+.property-page-content {
   background: var(--caramel);
   border-radius: 22px;
-  margin: 0 16px 24px;
+  margin: 0 16px 32px;   /* 👈 РОВНО КАК СЛАЙДЕР */
   padding: 22px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
-/* TEXT */
-.property-title {
+/* Текст */
+.property-page-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--frost);
   margin-bottom: 8px;
+  text-align: left;
 }
 
-.property-address {
+.property-page-address {
   font-size: 0.95rem;
   color: var(--frost);
   margin-bottom: 12px;
 }
 
-.property-description {
+.property-page-description {
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--frost);
   margin-bottom: 18px;
 }
 
-.property-price-page {
+.property-page-price {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--frost);
 }
+
+/* ===============================
+   📞 ФУТЕР (ЦЕНТР)
+   =============================== */
+
+.site-footer {
+  background: var(--cold-sky);
+  padding: 36px 20px 40px;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.footer-social a {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2AABEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social svg {
+  width: 26px;
+  height: 26px;
+  fill: white;
+}
+
+.footer-phone {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
 
 
 
