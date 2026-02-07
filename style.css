@@ -183,12 +183,31 @@ body {
 /* =====================================================
    💰 ФИЛЬТР ПО ЦЕНЕ
    ===================================================== */
-.price-filter-bar {
+/* ===== PRICE FILTER BUTTONS (КАК CATEGORY) ===== */
+.price-filter-btn {
+  min-width: 110px;            /* 🔴 ТАКОЙ ЖЕ РАЗМЕР */
+  height: 44px;                /* 🔴 ОДИНАКОВАЯ ВЫСОТА */
+
+  padding: 0 16px;
+  border-radius: 18px;
+
+  background: #ffffff;
+  color: var(--cold-sky);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+
   display: flex;
-  gap: 14px;
-  padding: 14px 20px;
-  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(59, 95, 111, 0.25);
+  cursor: pointer;
+
+  transition: background 0.25s ease, transform 0.2s ease;
 }
+
 
 .price-filter-bar::-webkit-scrollbar {
   display: none;
@@ -210,8 +229,14 @@ body {
 
 .price-filter-btn.active {
   background: var(--cold-sky);
-  color: var(--white);
+  color: #ffffff;
+  border-color: var(--cold-sky);
 }
+
+.price-filter-btn:hover {
+  transform: translateY(-1px);
+}
+
 
 /* =====================================================
    🧱 СЕТКА КАРТОЧЕК
