@@ -7,6 +7,7 @@
   --white: #ffffff;
 }
 
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,94 +20,73 @@ body {
   color: var(--cold-sky);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== CONTAINER ===== */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  background: var(--wool);
   min-height: 100vh;
+  background: var(--wool);
 }
 
-/* ===== HEADER ===== */
+/* =====================================================
+   HEADER (КНОПКА СЛЕВА + ЗАГОЛОВОК ПО ЦЕНТРУ)
+   ===================================================== */
+
 .app-header {
+  position: relative;
+  height: 64px;
   background: var(--cold-sky);
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.profile-photo {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 18px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid rgba(255,255,255,0.9);
-}
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-name {
-  font-size: 1.9em;
-  font-weight: 700;
-}
-
-.profile-title {
-  opacity: 0.9;
-}
-
-/* ===== BUTTONS ===== */
-.buttons-grid {
-  display: grid;
-  gap: 22px;
-  max-width: 420px;
-  margin: 40px auto;
-}
-
-.category-btn {
-  width: 100%;
-  max-width: 340px; /* 🔥 УМЕНЬШАЕМ ДЛИНУ */
-  margin: 0 auto;
-
-  padding: 18px 22px; /* чуть компактнее */
-  border-radius: 18px;
-
-  background: #dfd2c8; /* caramel */
-  color: #6f8fa6; /* cold sky */
-
-  font-size: 1.05em;
-  font-weight: 600;
-
-  text-decoration: none;
-  text-align: left;
 
   display: flex;
   align-items: center;
-  gap: 14px;
-
-  transition: all 0.25s ease;
 }
 
-/* hover */
-.category-btn:hover {
-  background: #d1c3b8;
-  transform: translateY(-2px);
+/* ← КНОПКА НАЗАД */
+.header-back {
+  position: absolute;
+  left: 8px;              /* 🔴 МЕНЯЙ ОТСТУП СЛЕВА ЗДЕСЬ */
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 2rem;        /* 🔴 МЕНЯЙ РАЗМЕР СТРЕЛКИ ЗДЕСЬ */
+  padding: 6px;           /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ */
+
+  color: white;
+  border-radius: 10px;
+  background: transparent;
+
+  transition: background-color 0.15s ease;
 }
 
+.header-back:active {
+  background-color: rgba(0, 0, 0, 0.18); /* лёгкое затемнение */
+}
 
-/* ===== CATEGORY NAV (АККУРАТНЫЕ ТАБЫ) ===== */
+/* ЗАГОЛОВОК ПО ЦЕНТРУ */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ===== CATEGORY NAV ===== */
 .category-nav {
   display: flex;
   justify-content: center;
   gap: 12px;
   padding: 16px;
-  background: transparent;
 }
 
-/* Кнопка */
 .category-link {
   min-width: 110px;
   padding: 10px 14px;
@@ -114,30 +94,55 @@ body {
 
   font-size: 0.9em;
   font-weight: 600;
-  letter-spacing: 0.2px;
 
   border-radius: 14px;
-  background: #ffffff;
+  background: white;
   color: var(--cold-sky);
-
   border: 2px solid rgba(59, 95, 111, 0.25);
-  text-decoration: none;
 
-  transition: all 0.25s ease;
+  transition: 0.25s ease;
 }
 
-/* Активная */
 .category-link.active {
   background: var(--cold-sky);
-  color: #ffffff;
+  color: white;
   border-color: var(--cold-sky);
 }
 
-/* Небольшой hover */
-.category-link:hover {
-  transform: translateY(-1px);
+/* ===== PRICE FILTER ===== */
+.price-filter-bar {
+  display: flex;
+  gap: 14px;
+  padding: 14px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
+.price-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.price-filter-btn {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  border-radius: 16px;
+
+  background: white;
+  color: var(--cold-sky);
+
+  font-size: 0.9em;
+  font-weight: 600;
+
+  border: 2px solid rgba(59, 95, 111, 0.25);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.price-filter-btn.active {
+  background: var(--cold-sky);
+  color: white;
+  border-color: var(--cold-sky);
+}
 
 /* ===== GRID ===== */
 .properties-grid {
@@ -147,8 +152,9 @@ body {
   padding: 30px 20px;
 }
 
-/* ===== CARD (РОСКОШЬ) ===== */
+/* ===== CARD ===== */
 .property-card {
+  display: block;
   background: var(--caramel);
   border-radius: 22px;
   overflow: hidden;
@@ -168,219 +174,21 @@ body {
 .property-info h3 {
   font-size: 1.15em;
   margin-bottom: 10px;
+  color: var(--frost);
 }
 
-.address {
-  font-size: 0.9em;
-  opacity: 0.85;
-  margin-bottom: 10px;
-}
-
-.description {
-  font-size: 0.95em;
-  line-height: 1.5;
-  margin-bottom: 14px;
+.address,
+.description,
+.property-price {
+  color: var(--frost);
 }
 
 .property-price {
   font-size: 1.25em;
   font-weight: 700;
-  color: var(--white);
 }
 
 /* ===== FOOTER ===== */
-.site-footer {
-  background: var(--cold-sky);
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.footer-social a {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #2AABEE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-phone {
-  display: block;
-  font-size: 1.2em;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-}
-
-.category-btn {
-  color: var(--frost); /* БЕЛЫЙ ТЕКСТ */
-}
-
-.property-info h3 {
-  color: var(--frost);
-}
-
-.address {
-  color: var(--frost); 
-}
-
-.description {
-  color: var(--frost); 
-}
-
-.property-price {
-  color:var(--frost); 
-  font-weight: 700;
-}
-
-
-/* ===============================
-   PROPERTY PAGE (СТРАНИЦА ОБЪЕКТА)
-   =============================== */
-
-.property-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 20px;
-  background: var(--cold-sky);
-  color: var(--white);
-}
-
-.property-header button {
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 0.95em;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.property-slider {
-  position: relative;
-  height: 300px;
-  background: var(--cookies);
-}
-
-.property-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.property-slider .slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(54, 90, 114, 0.75);
-  color: white;
-  border: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.property-slider .prev { left: 14px; }
-.property-slider .next { right: 14px; }
-
-.property-page-content {
-  padding: 26px 22px;
-  background: var(--wool);
-}
-
-.property-page-title {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: var(--frost);
-  margin-bottom: 10px;
-}
-
-.property-page-address {
-  font-size: 0.95em;
-  color: var(--cold-sky);
-  margin-bottom: 14px;
-}
-
-.property-page-description {
-  font-size: 1em;
-  line-height: 1.6;
-  color: var(--frost);
-  margin-bottom: 18px;
-}
-
-.property-page-price {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: var(--frost);
-}
-
-/* Убираем стандартный вид ссылок */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Карточка как ссылка */
-.property-card {
-  display: block;
-  color: var(--frost);
-}
-
-
-
-/* ===== PROPERTY PAGE CONTENT ===== */
-
-.property-page-content {
-  background: var(--caramel);
-  border-radius: 22px;
-  padding: 26px 24px;
-  margin: 24px 20px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-/* Заголовок */
-.property-page-title {
-  font-size: 1.2em;
-  font-weight: 700;
-  color: var(--frost);
-  margin-bottom: 10px;
-}
-
-/* Адрес */
-.property-page-address {
-  font-size: 0.95em;
-  color: var(--frost);
-  margin-bottom: 12px;
-}
-
-/* Описание */
-.property-page-description {
-  font-size: 0.95em;
-  line-height: 1.55;
-  color: var(--frost);
-  margin-bottom: 18px;
-}
-
-/* Цена */
-.property-page-price {
-  font-size: 1.35em;
-  font-weight: 700;
-  color: var(--frost);
-}
-
-
-/* ===== FOOTER (ЕДИНЫЙ ДЛЯ ВСЕХ СТРАНИЦ) ===== */
-
 .site-footer {
   background: var(--cold-sky);
   color: white;
@@ -415,108 +223,4 @@ a {
   display: block;
   font-size: 1.2em;
   font-weight: 600;
-  color: white;
-  text-decoration: none;
-}
-
-/* ===== APP HEADER ===== */
-
-.app-header {
-  position: relative;
-  background: var(--cold-sky);
-  color: white;
-  padding: 16px 16px 16px 4px ;
-  text-align: center;
-}
-
-/* Кнопка "Назад / На главную" */
-.header-back {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  color: white;
-  text-decoration: none;
-  font-size: 0.95em;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-.header-back:hover {
-  opacity: 1;
-}
-
-/* Заголовок по центру */
-.header-title {
-  font-size: 1.4em;
-  font-weight: 700;
-}
-
-
-/* ===== PRICE FILTER BAR ===== */
-.price-filter-bar {
-  display: flex;
-  gap: 14px;
-  padding: 14px 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.price-filter-bar::-webkit-scrollbar {
-  display: none;
-}
-
-.price-filter-btn {
-  flex: 0 0 auto;
-  padding: 12px 18px;
-  border-radius: 16px;
-
-  background: #ffffff;
-  color: var(--cold-sky);
-
-  font-size: 0.9em;
-  font-weight: 600;
-
-  border: 2px solid rgba(59, 95, 111, 0.25);
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-.price-filter-btn.active {
-  background: var(--cold-sky);
-  color: #ffffff;
-  border-color: var(--cold-sky);
-}
-
-.price-filter-btn:hover {
-  transform: translateY(-1px);
-}
-
-
-/* ===== КНОПКА НАЗАД ===== */
-.header-back {
-  text-decoration: none;
-  color: white;
-
-  /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
-  font-size: 2.0rem;
-
-  /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
-  padding: 6px 8px 6px 4 px;
-
-  line-height: 1;
-  border-radius: 10px;
-
-  background: transparent;
-  border: none;
-  outline: none;
-
-  transition: background-color 0.15s ease;
-}
-
-/* ✅ ЗАТЕМНЕНИЕ БЕЗ СДВИГА */
-.header-back:active {
-  background-color: rgba(0, 0, 0, 0.18);
 }
