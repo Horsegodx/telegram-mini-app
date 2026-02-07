@@ -312,9 +312,8 @@ body {
 }
 
 
-
 /* =====================================================
-   🧾 СТРАНИЦА ОБЪЕКТА
+   🧾 СТРАНИЦА ОБЪЕКТА (ФИНАЛ)
    ===================================================== */
 
 /* HEADER */
@@ -366,7 +365,7 @@ body {
   object-fit: cover;
 }
 
-/* CARD CONTENT */
+/* CONTENT CARD */
 .property-card-page {
   background: var(--caramel);
   border-radius: 22px;
@@ -377,7 +376,7 @@ body {
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
-/* TITLE */
+/* TEXT */
 .property-title {
   font-size: 1.25rem;
   font-weight: 700;
@@ -386,14 +385,12 @@ body {
   text-align: left;
 }
 
-/* ADDRESS */
 .property-address {
   font-size: 0.95rem;
   color: var(--frost);
   margin-bottom: 12px;
 }
 
-/* DESCRIPTION */
 .property-description {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -401,7 +398,6 @@ body {
   margin-bottom: 18px;
 }
 
-/* PRICE */
 .property-price-page {
   font-size: 1.4rem;
   font-weight: 700;
@@ -409,19 +405,6 @@ body {
 }
 
 
-/* =====================================================
-   📸 СЛАЙДЕР
-   ===================================================== */
-.property-slider {
-  height: 300px;
-  background: var(--cookies);
-}
-
-.property-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* =====================================================
    📋 КОНТЕНТ ОБЪЕКТА
