@@ -268,8 +268,10 @@ body {
 }
 
 .property-info {
-  padding: 22px;
   text-align: left;
+}
+.property-page-content {
+  text-align: left;   /* ← ВЫРАВНИВАНИЕ ВЛЕВО */
 }
 
 .property-info h3 {
