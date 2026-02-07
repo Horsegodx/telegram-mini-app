@@ -495,14 +495,14 @@ a {
 }
 
 
-/* ===== Кнопка назад везде ===== */
-
+/* ===== КНОПКА НАЗАД В ХЕДЕРЕ ===== */
 .header-back {
-  font-size: 2.2rem;          
-  font-weight: 600;
+  /* 🔧 РАЗМЕР СТРЕЛКИ (меняй здесь) */
+  font-size: 1.8rem;        /* ← размер стрелки */
 
-  width: 44px;
-  height: 44px;
+  /* 🔧 РАЗМЕР КНОПКИ (меняй здесь) */
+  width: 40px;              /* ← ширина кнопки */
+  height: 40px;             /* ← высота кнопки */
 
   display: flex;
   align-items: center;
@@ -510,18 +510,39 @@ a {
 
   color: white;
   text-decoration: none;
+  font-weight: 600;
 
+  /* форма */
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
 
-  transition: all 0.2s ease;
+  /* ❌ полностью убираем фон и обводки */
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  /* ❌ убираем любые анимации и сдвиги */
+  transform: none;
+  transition: opacity 0.15s ease;
+
+  /* фиксируем, чтобы не прыгала */
+  position: relative;
 }
 
-/* hover / tap */
-.header-back:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
+/* ❌ убираем hover / focus эффекты */
+.header-back:hover,
+.header-back:focus {
+  background: none;
+  box-shadow: none;
+  outline: none;
+  transform: none;
 }
+
+/* ✅ НЕЗАМЕТНОЕ НАЖАТИЕ (iOS / Telegram style) */
+.header-back:active {
+  opacity: 0.55;   /* ← эффект нажатия */
+}
+
 
 
 
