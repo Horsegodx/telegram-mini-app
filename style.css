@@ -312,9 +312,9 @@ body {
 }
 
 
-/* =====================================================
-   🧾 СТРАНИЦА ОБЪЕКТА (ФИНАЛ)
-   ===================================================== */
+/* ===============================
+   🧾 СТРАНИЦА ОБЪЕКТА — ФИНАЛ
+   =============================== */
 
 /* HEADER */
 .property-header {
@@ -328,12 +328,10 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   background: transparent;
   border: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
-
   padding: 10px 16px;
   border-radius: 14px;
 }
@@ -354,14 +352,17 @@ body {
   background: rgba(0,0,0,0.18);
 }
 
-/* IMAGE */
-.property-image-wrap {
-  padding: 16px;
+/* SLIDER */
+.property-slider {
+  margin: 16px;
+  border-radius: 22px;
+  overflow: hidden;
+  height: 260px; /* 🔴 ВАЖНО: фиксируем высоту */
 }
 
-.property-image-wrap img {
+.property-slider img {
   width: 100%;
-  border-radius: 22px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -369,20 +370,17 @@ body {
 .property-card-page {
   background: var(--caramel);
   border-radius: 22px;
-
-  margin: 16px;
+  margin: 0 16px 24px;
   padding: 22px;
-
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* TEXT */
 .property-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--frost);
-  margin-bottom: 10px;
-  text-align: left;
+  margin-bottom: 8px;
 }
 
 .property-address {
@@ -399,7 +397,7 @@ body {
 }
 
 .property-price-page {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--frost);
 }
