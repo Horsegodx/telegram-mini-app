@@ -94,14 +94,18 @@ function prevImage() {
 }
 
 function shareProperty() {
-  const url = window.location.href;
-  if (navigator.share) {
-    navigator.share({ title: item.title, url });
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(item.title);
+
+  const tgShareUrl = `https://t.me/share/url?url=${url}&text=${text}`;
+
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.openTelegramLink(tgShareUrl);
   } else {
-    navigator.clipboard.writeText(url);
-    alert("Ссылка скопирована");
+    window.open(tgShareUrl, "_blank");
   }
 }
+
 </script>
 
 <footer class="site-footer">
