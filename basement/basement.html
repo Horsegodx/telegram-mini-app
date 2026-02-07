@@ -26,14 +26,17 @@
     <a class="category-link" href="../shops/shops.html">Магазины</a>
   </div>
 
+  <div class="price-filter-wrapper">
   <div class="price-filter">
-  <button class="price-btn active" data-min="0" data-max="999">Все</button>
-  <button class="price-btn" data-min="5" data-max="10">5–10 млн</button>
-  <button class="price-btn" data-min="10" data-max="15">10–15 млн</button>
-  <button class="price-btn" data-min="15" data-max="20">15–20 млн</button>
-  <button class="price-btn" data-min="20" data-max="30">20–30 млн</button>
-  <button class="price-btn" data-min="30" data-max="999">30+ млн</button>
+    <button class="price-btn active" data-min="0" data-max="999">Все</button>
+    <button class="price-btn" data-min="5" data-max="10">5–10 млн</button>
+    <button class="price-btn" data-min="10" data-max="15">10–15 млн</button>
+    <button class="price-btn" data-min="15" data-max="20">15–20 млн</button>
+    <button class="price-btn" data-min="20" data-max="30">20–30 млн</button>
+    <button class="price-btn" data-min="30" data-max="999">30+ млн</button>
+  </div>
 </div>
+
 
 
   <!-- КАРТОЧКИ -->
@@ -79,6 +82,30 @@
   </a>
 </footer>
 
+<script>
+const priceButtons = document.querySelectorAll(".price-btn");
+const cards = document.querySelectorAll(".property-card");
+
+priceButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    priceButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const min = parseFloat(btn.dataset.min);
+    const max = parseFloat(btn.dataset.max);
+
+    cards.forEach(card => {
+      const price = parseFloat(card.dataset.price);
+
+      if (price >= min && price <= max) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+</script>
 
 </div>
 </body>

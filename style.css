@@ -455,32 +455,31 @@ a {
 
 
 /* ===== PRICE FILTER ===== */
+.price-filter-wrapper {
+  padding: 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .price-filter {
   display: flex;
   gap: 12px;
-  padding: 14px 16px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.price-filter::-webkit-scrollbar {
-  display: none;
+  width: max-content;
 }
 
 .price-btn {
-  flex: 0 0 auto;
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-radius: 14px;
+  border: 2px solid rgba(54, 90, 114, 0.3);
 
-  background: #ffffff;
-  border: 2px solid rgba(54, 90, 114, 0.25);
+  background: var(--white);
+  color: var(--cold-sky);
 
   font-size: 0.9em;
   font-weight: 600;
-  color: var(--cold-sky);
+  white-space: nowrap;
 
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.25s ease;
 }
 
@@ -493,4 +492,5 @@ a {
 .price-btn:hover {
   transform: translateY(-1px);
 }
+
 
