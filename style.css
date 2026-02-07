@@ -425,7 +425,7 @@ a {
   position: relative;
   background: var(--cold-sky);
   color: white;
-  padding: 0px 16px 0px 0px ;
+  padding: 16px 16px 16px 4px ;
   text-align: center;
 }
 
@@ -497,25 +497,24 @@ a {
 
 /* ===== КНОПКА НАЗАД ===== */
 .header-back {
-  position: relative;
-  z-index: 2;
-
   text-decoration: none;
   color: white;
+
+  /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
   font-size: 2.0rem;
 
-  padding: 6px 6px 6px 0px;
+  /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
+  padding: 6px 8px 6px 4 px;
+
   line-height: 1;
   border-radius: 10px;
 
   background: transparent;
+  border: none;
+  outline: none;
+
   transition: background-color 0.15s ease;
 }
-
-.header-back:active {
-  background-color: rgba(0, 0, 0, 0.18);
-}
-
 
 /* ✅ ЗАТЕМНЕНИЕ БЕЗ СДВИГА */
 .header-back:active {
