@@ -251,54 +251,52 @@ body {
   padding: 30px 20px;
 }
 
-/* =====================================================
-   🏷️ КАРТОЧКА ОБЪЕКТА
-   ===================================================== */
-.property-card {
-  background: var(--caramel);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-.property-image {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
+/* ===== КАРТОЧКА ОБЪЕКТА: ТЕКСТ КАК У ЦИАН ===== */
 .property-info {
+  padding: 22px 24px;        /* 🔹 ровные боковые отступы */
   text-align: left;
 }
-.property-page-content {
-  text-align: left;   /* ← ВЫРАВНИВАНИЕ ВЛЕВО */
-}
 
+/* Заголовок */
 .property-info h3 {
   font-size: 1.15rem;
-  margin-bottom: 8px;
-}
-
-.address,
-.description,
-.property-price {
-  color: var(--frost);
-}
-
-.address {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.description {
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-
-.property-price {
-  font-size: 1.25rem;
   font-weight: 700;
+  color: var(--frost);
+
+  margin-bottom: 12px;       /* 🔹 воздух под заголовком */
+  line-height: 1.3;
 }
+
+/* Адрес */
+.property-info .address {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  font-size: 0.95rem;
+  color: var(--frost);
+
+  margin-bottom: 10px;
+}
+
+/* Описание */
+.property-info .description {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--frost);
+
+  margin-bottom: 18px;
+}
+
+/* Цена */
+.property-info .property-price {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--frost);
+
+  margin-top: 4px;
+}
+
 
 /* =====================================================
    📄 СТРАНИЦА ОБЪЕКТА
