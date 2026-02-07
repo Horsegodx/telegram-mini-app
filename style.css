@@ -495,53 +495,63 @@ a {
 }
 
 
-/* ===== КНОПКА НАЗАД В ХЕДЕРЕ ===== */
-.header-back {
-  /* 🔧 РАЗМЕР СТРЕЛКИ (меняй здесь) */
-  font-size: 1.8rem;        /* ← размер стрелки */
+/* ===== ОБЩИЙ КОНТЕЙНЕР ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #e6e6e4;
+}
 
-  /* 🔧 РАЗМЕР КНОПКИ (меняй здесь) */
-  width: 40px;              /* ← ширина кнопки */
-  height: 40px;             /* ← высота кнопки */
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+}
 
+/* ===== HEADER ===== */
+.app-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 
+  background: #7f9bb0;
   color: white;
+
+  padding: 16px;
+  border-radius: 0 0 20px 20px;
+}
+
+/* ===== КНОПКА НАЗАД ===== */
+.header-back {
   text-decoration: none;
-  font-weight: 600;
+  color: white;
 
-  /* форма */
-  border-radius: 50%;
+  /* 🔴 МЕНЯЙ РАЗМЕР КНОПКИ ЗДЕСЬ */
+  font-size: 1.8rem;
 
-  /* ❌ полностью убираем фон и обводки */
-  background: none;
+  /* 🔴 МЕНЯЙ ЗОНУ НАЖАТИЯ ЗДЕСЬ */
+  padding: 6px 10px;
+
+  line-height: 1;
+  border-radius: 10px;
+
+  background: transparent;
   border: none;
-  box-shadow: none;
   outline: none;
 
-  /* ❌ убираем любые анимации и сдвиги */
-  transform: none;
-  transition: opacity 0.15s ease;
-
-  /* фиксируем, чтобы не прыгала */
-  position: relative;
+  transition: background-color 0.15s ease;
 }
 
-/* ❌ убираем hover / focus эффекты */
-.header-back:hover,
-.header-back:focus {
-  background: none;
-  box-shadow: none;
-  outline: none;
-  transform: none;
-}
-
-/* ✅ НЕЗАМЕТНОЕ НАЖАТИЕ (iOS / Telegram style) */
+/* ✅ ЗАТЕМНЕНИЕ БЕЗ СДВИГА */
 .header-back:active {
-  opacity: 0.55;   /* ← эффект нажатия */
+  background-color: rgba(0, 0, 0, 0.18);
 }
+
+/* ===== ЗАГОЛОВОК ===== */
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 
 
 
