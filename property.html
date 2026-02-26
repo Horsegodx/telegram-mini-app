@@ -9,10 +9,12 @@
 
 <body>
 
-<div class="property-header">
-  <button class="back-btn" onclick="history.back()">
-  ←
-</button>
+<div class="property-topbar">
+  <button class="back-btn" onclick="history.back()">←</button>
+
+  <button class="share-btn" onclick="shareProperty()">
+    ⤴
+  </button>
 </div>
 
 <div class="property-slider"></div>
@@ -96,6 +98,20 @@ function activateSlider() {
     index = (index + 1) % slides.length;
     show(index);
   };
+}
+
+function shareProperty() {
+  const url = window.location.href;
+
+  if (navigator.share) {
+    navigator.share({
+      title: document.getElementById("title").innerText,
+      url: url
+    });
+  } else {
+    navigator.clipboard.writeText(url);
+    alert("Ссылка скопирована");
+  }
 }
 
 loadProperty();

@@ -577,23 +577,29 @@ body {
   text-decoration: none;
 }
 
-/* ===== BACK BUTTON ===== */
+/* ===== PROPERTY TOP BAR ===== */
 
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.property-topbar {
+  position: relative;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
 
+/* Общий стиль кнопок */
+.back-btn,
+.share-btn {
   width: 44px;
   height: 44px;
-
   border-radius: 50%;
   border: none;
 
-  background: rgba(111, 143, 161, 0.9);
+  background: rgba(111, 143, 161, 0.85);
   color: white;
 
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 
   display: flex;
@@ -601,9 +607,10 @@ body {
   justify-content: center;
 
   cursor: pointer;
-  z-index: 10;
+  transition: 0.2s;
 }
 
-.back-btn:active {
+.back-btn:active,
+.share-btn:active {
   transform: scale(0.95);
 }
