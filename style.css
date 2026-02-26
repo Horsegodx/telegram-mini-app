@@ -617,7 +617,13 @@ body {
   transition: 0.2s;
 }
 
+.back-btn,
+.share-btn {
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
 .back-btn:active,
 .share-btn:active {
-  transform: scale(0.95);
+  background: rgba(255,255,255,0.35);
+  opacity: 0.9;
 }
