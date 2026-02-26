@@ -533,3 +533,46 @@ body {
   text-decoration: none;
   letter-spacing: 0.3px;
 }
+
+
+/* ===== FIXED FOOTER ===== */
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #6f8fa1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1000;
+}
+
+.footer-telegram {
+  width: 70px;
+  height: 70px;
+  background: #2AABEE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer-telegram svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+.footer-phone {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+}
