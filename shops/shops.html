@@ -4,28 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазины</title>
-
-  <!-- общий CSS -->
   <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
+
 <div class="container">
 
-  <!-- ===== HEADER ===== -->
   <header class="app-header">
     <a href="../index.html" class="header-back">←</a>
     <div class="header-title">Магазины</div>
   </header>
 
-  <!-- ===== КАТЕГОРИИ ===== -->
   <div class="category-nav">
-    <a class="category-link" href="../basement/basement.html">Подвалы</a>
+    <a class="category-link active" href="basement.html">Подвалы</a>
     <a class="category-link" href="../first-floor/first-floor.html">1 этаж</a>
-    <a class="category-link active" href="shops.html">Магазины</a>
+    <a class="category-link" href="../shops/shops.html">Магазины</a>
   </div>
 
-  <!-- ===== ФИЛЬТР ПО ЦЕНЕ ===== -->
   <div class="price-filter-bar">
     <button class="price-filter-btn active" data-range="all">Все</button>
     <button class="price-filter-btn" data-min="5000000" data-max="10000000">5–10 млн</button>
@@ -35,89 +30,116 @@
     <button class="price-filter-btn" data-min="30000000">30+ млн</button>
   </div>
 
-  <!-- ===== КАРТОЧКИ ===== -->
-  <div class="properties-grid">
-
-    <!-- КАРТОЧКА 1 -->
-    <a href="property.html?id=shop-1"
-       class="property-card"
-       data-price="70000000">
-
-      <img src="../images/Frame1.png"
-           class="property-image" alt="">
-
-      <div class="property-info">
-        <h3>Магазин 40 кв.м.</h3>
-        <div class="address">📍 ул. Покупательская, 15</div>
-        <div class="description">Витрины, высокая проходимость</div>
-        <div class="property-price">70 000 000 ₽</div>
-      </div>
-    </a>
-
-    <!-- КАРТОЧКА 2 -->
-    <a href="property.html?id=shop-2"
-       class="property-card"
-       data-price="16000000">
-
-      <img src="../images/Frame4.jpg"
-           class="property-image" alt="">
-
-      <div class="property-info">
-        <h3>Магазин одежды 80 кв.м.</h3>
-        <div class="address">📍 ул. Модная, 22</div>
-        <div class="description">Витринное остекление, ремонт</div>
-        <div class="property-price">16 000 000 ₽</div>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <div class="footer-social">
-      <a href="https://t.me/snowbobr" target="_blank" aria-label="Telegram">
-        <svg viewBox="0 0 24 24">
-          <path d="M9.04 15.44l-.38 5.36c.55 0 .79-.24 1.08-.52l2.6-2.47 5.39 3.94c.99.55 1.7.26 1.95-.91l3.54-16.6c.31-1.45-.52-2.02-1.49-1.66L1.15 9.77c-1.4.55-1.38 1.34-.24 1.69l5.36 1.67L18.6 6.42"/>
-        </svg>
-      </a>
-    </div>
-
-    <a href="tel:+79265524725" class="footer-phone">
-      +7 (926) 552-47-25
-    </a>
-  </footer>
+  <div class="properties-grid"></div>
 
 </div>
 
-<!-- ===== JS: ФИЛЬТРАЦИЯ ПО ЦЕНЕ ===== -->
 <script>
+const API = "https://api.evgeny-ivanov-premises.ru";
+const container = document.querySelector(".properties-grid");
 const filterButtons = document.querySelectorAll(".price-filter-btn");
-const cards = document.querySelectorAll(".property-card");
+
+let allObjects = [];
+
+async function loadObjects() {
+  const res = await fetch(API + "/objects");
+  const data = await res.json();
+
+  allObjects = data.filter(o => o.category === "Магазин");
+  renderObjects(allObjects);
+}
+
+function createSlider(images) {
+  if (!images || images.length === 0) return "";
+
+  return `
+    <div class="property-slider">
+      ${images.map((img, i) => `
+        <img src="${API}${img}" 
+             class="slide" 
+             style="display:${i === 0 ? 'block' : 'none'}">
+      `).join("")}
+      ${images.length > 1 ? `
+        <button class="slider-btn prev">‹</button>
+        <button class="slider-btn next">›</button>
+      ` : ""}
+    </div>
+  `;
+}
+
+function activateSliders() {
+  document.querySelectorAll(".property-slider").forEach(slider => {
+    const slides = slider.querySelectorAll(".slide");
+    let index = 0;
+
+    const prev = slider.querySelector(".prev");
+    const next = slider.querySelector(".next");
+
+    function show(i) {
+      slides.forEach(s => s.style.display = "none");
+      slides[i].style.display = "block";
+    }
+
+    if (prev && next) {
+      prev.onclick = e => {
+        e.preventDefault();
+        index = (index - 1 + slides.length) % slides.length;
+        show(index);
+      };
+      next.onclick = e => {
+        e.preventDefault();
+        index = (index + 1) % slides.length;
+        show(index);
+      };
+    }
+  });
+}
+
+function renderObjects(objects) {
+  container.innerHTML = "";
+
+  objects.forEach(obj => {
+    const card = document.createElement("a");
+    card.href = `../property.html?id=${obj.id}`;
+    card.className = "property-card";
+    card.dataset.price = obj.price;
+
+    card.innerHTML = `
+      ${createSlider(obj.images)}
+      <div class="property-info">
+        <h3>${obj.title}</h3>
+        <div class="address">📍 ${obj.address || ""}</div>
+        <div class="description">${obj.description || ""}</div>
+        <div class="property-price">
+          ${Number(obj.price).toLocaleString()} ₽
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  activateSliders();
+}
 
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
 
-    // активная кнопка
     filterButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
     const min = btn.dataset.min ? Number(btn.dataset.min) : 0;
     const max = btn.dataset.max ? Number(btn.dataset.max) : Infinity;
 
-    cards.forEach(card => {
-      const price = Number(card.dataset.price);
+    const filtered = btn.dataset.range === "all"
+      ? allObjects
+      : allObjects.filter(o => o.price >= min && o.price <= max);
 
-      if (
-        btn.dataset.range === "all" ||
-        (price >= min && price <= max)
-      ) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    });
+    renderObjects(filtered);
   });
 });
+
+loadObjects();
 </script>
 
 </body>
