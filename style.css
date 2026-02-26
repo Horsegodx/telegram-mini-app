@@ -577,31 +577,40 @@ body {
   text-decoration: none;
 }
 
-/* ===== PROPERTY TOP BAR ===== */
+/* ===== PROPERTY HEADER ===== */
 
-.property-topbar {
-  position: relative;
+.property-header {
+  background: #6f8fa1;
   height: 70px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-/* Общий стиль кнопок */
+.property-header-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Кнопки */
+
 .back-btn,
 .share-btn {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
 
-  background: rgba(111, 143, 161, 0.85);
+  background: rgba(255,255,255,0.2);
   color: white;
 
   font-size: 20px;
-  font-weight: bold;
-
   display: flex;
   align-items: center;
   justify-content: center;

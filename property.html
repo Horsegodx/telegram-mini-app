@@ -9,12 +9,14 @@
 
 <body>
 
-<div class="property-topbar">
+<div class="property-header">
   <button class="back-btn" onclick="history.back()">←</button>
 
-  <button class="share-btn" onclick="shareProperty()">
-    ⤴
-  </button>
+  <div class="property-header-title">
+    Помещение
+  </div>
+
+  <button class="share-btn" onclick="shareProperty()">⤴</button>
 </div>
 
 <div class="property-slider"></div>
@@ -99,6 +101,7 @@ function activateSlider() {
     show(index);
   };
 }
+
 
 function shareProperty() {
   const url = window.location.href;
