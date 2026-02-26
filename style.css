@@ -576,3 +576,34 @@ body {
   font-weight: 600;
   text-decoration: none;
 }
+
+/* ===== BACK BUTTON ===== */
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(111, 143, 161, 0.9);
+  color: white;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-btn:active {
+  transform: scale(0.95);
+}
