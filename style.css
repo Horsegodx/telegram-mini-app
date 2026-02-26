@@ -588,8 +588,6 @@ body {
   justify-content: space-between;
 
   padding: 0 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 .property-header-title {
@@ -604,6 +602,7 @@ body {
 .share-btn {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   border: none;
 
   background: rgba(255,255,255,0.2);
