@@ -56,6 +56,20 @@ const filterButtons = document.querySelectorAll(".price-filter-btn");
 
 let allObjects = [];
 
+/* =========================
+   ОБРЕЗАНИЕ ТЕКСТА
+========================= */
+function truncateText(text, maxLength = 280) {
+  if (!text) return "";
+
+  if (text.length <= maxLength) {
+    return text.trim();
+  }
+
+  return text.substring(0, maxLength).trim() + "\n\n...";
+}
+/* ========================= */
+
 async function loadObjects() {
   const res = await fetch(API + "/objects");
   const data = await res.json();
@@ -124,7 +138,9 @@ function renderObjects(objects) {
       <div class="property-info">
         <h3>${obj.title}</h3>
         <div class="address">📍 ${obj.address || ""}</div>
-        <div class="description">${obj.description || ""}</div>
+        <div class="property-description">
+          ${truncateText(obj.description)}
+        </div>
         <div class="property-price">
           ${Number(obj.price).toLocaleString()} ₽
         </div>

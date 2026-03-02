@@ -627,3 +627,10 @@ body {
   background: rgba(255,255,255,0.35);
   opacity: 0.9;
 }
+
+.property-description {
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-top: 8px;
+}
