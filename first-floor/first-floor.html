@@ -60,7 +60,7 @@ let allObjects = [];
 /* =========================
    ОБРЕЗАНИЕ ТЕКСТА
 ========================= */
-function truncateText(text, maxLength = 280) {
+function truncateText(text, maxLength = 100) {
   if (!text) return "";
 
   if (text.length <= maxLength) {
