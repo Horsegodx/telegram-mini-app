@@ -634,3 +634,36 @@ body {
   font-size: 15px;
   margin-top: 8px;
 }
+/* для кнопки скачать призентацию*/
+
+.presentation-btn {
+
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  background: #3b5f6f;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+}
+
+.presentation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+

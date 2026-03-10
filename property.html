@@ -21,6 +21,10 @@
   <div class="property-page-address" id="address"></div>
   <div class="property-page-description" id="description"></div>
   <div class="property-page-price" id="price"></div>
+
+  <button class="presentation-btn" onclick="downloadPresentation()">
+    📊 Скачать презентацию
+  </button>
 </div>
 
 <footer class="site-footer">
@@ -110,6 +114,22 @@ function shareProperty() {
     navigator.clipboard.writeText(url);
     alert("Ссылка скопирована");
   }
+}
+
+function downloadPresentation() {
+
+  const link = document.createElement("a");
+
+  link.href = API + "/objects/" + id + "/presentation";
+
+  link.download = "presentation.pptx";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+
 }
 
 loadProperty();
